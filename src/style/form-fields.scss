@@ -11,6 +11,7 @@
     }
 
     &__input {
+        font-family: "Titillium Web";
         box-sizing: border-box;
         height: 39px;
         width: 426px;
@@ -18,6 +19,11 @@
         border-radius: 20px;
         color: $darkgrey;
         font-size: 18px;
+        font-weight: 300;
+    
+        &:hover {
+            border: 1px solid $green;
+        }
     }
 }
 
