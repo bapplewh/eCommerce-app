@@ -13,13 +13,13 @@ class Account extends Component {
             {   
                 _id: 0,
                 title: "Purchase History",
-                active: false,
+                active: true,
                 component: <PurchaseHistory/>
             },
             {
                 _id: 1,
                 title: "Account Information",
-                active: true,
+                active: false,
                 component: <AccountInfo/>
             }
         ]
@@ -32,7 +32,7 @@ class Account extends Component {
         let jsx;
 
         if(this.props.navbarLinks) {
-            this.props.navbarLinks.map(link => {
+            this.props.navbarLinks.forEach(link => {
                 if(link.active) {
                     jsx = link.component;
                 }
@@ -44,7 +44,7 @@ class Account extends Component {
 
     render() {
         return (
-            <div>
+            <div className="account">
                 {this.renderContent()}
             </div>
         )
