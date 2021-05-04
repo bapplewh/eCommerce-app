@@ -10,28 +10,20 @@ import Details from "../details";
 class AccountInfoForm extends Component {
     render() {
         const { className, handleSubmit } = this.props;
-        const links = [
-            {
-                _id: 0,
-                title: 'Not registered? Create an account here',
-                onClick: () => history.push('/signup')
-            },
-            {
-                _id: 1,
-                title: 'Forgot account email',
-                onClick: () => console.log('forgot email')
-            },
-            {
-                _id: 2,
-                title: 'Forgot password',
-                onClick: () => console.log('forgot password')
-            }
-        ]
         
         return (
-            <form onSubmit={handleSubmit} className={`${className} sign-in-form`}>
+            <form onSubmit={handleSubmit} className={`${className} account-info-form`}>
                 <Field 
-                    className="sign-in-form__email" 
+                    className="account-info-form__name" 
+                    type="name" 
+                    title="Name" 
+                    placeholder="Name" 
+                    name="name" 
+                    component={FormInput} 
+                />
+
+                <Field 
+                    className="account-info-form__email" 
                     type="email" 
                     title="Email" 
                     placeholder="Email" 
@@ -40,7 +32,43 @@ class AccountInfoForm extends Component {
                 />
 
                 <Field 
-                    className="sign-in-form__password" 
+                    className="account-info-form__street-address" 
+                    type="address" 
+                    title="Street Address" 
+                    placeholder="Street Address" 
+                    name="address" 
+                    component={FormInput} 
+                />
+
+                <Field 
+                    className="account-info-form__city" 
+                    type="city" 
+                    title="City" 
+                    placeholder="City" 
+                    name="city" 
+                    component={FormInput} 
+                />
+
+                <Field 
+                    className="account-info-form__state" 
+                    type="state" 
+                    title="State" 
+                    placeholder="State" 
+                    name="state" 
+                    component={FormInput} 
+                />
+
+                <Field 
+                    className="account-info-form__zipcode" 
+                    type="zipcode" 
+                    title="Zipcode" 
+                    placeholder="Zipcode" 
+                    name="zipcode" 
+                    component={FormInput} 
+                />
+
+                {/* <Field 
+                    className="account-info-form__password" 
                     type="password" 
                     title="Password" 
                     placeholder="Password" 
@@ -48,17 +76,14 @@ class AccountInfoForm extends Component {
                     component={FormInput} 
                 />
 
-                <div className="sign-in-form__line"></div>
-
                 <Field 
-                    className="sign-in-form__login" 
+                    className="account-info-form__login" 
                     onClick={() => history.push('/account')}
                     type="submit" 
                     title="Login" 
                     name="login" 
                     component={FormButton} 
-                />
-                <Details className='sign-in-form__details' title='Quick Links' links={links} />
+                /> */}
             </form>
         )
     }
