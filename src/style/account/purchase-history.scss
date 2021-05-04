@@ -66,10 +66,14 @@
     &__print-receipt {
         width: 160px;
         justify-self: center;
-        text-decoration: underline;
+        text-decoration: none;
         color: $green;
         font-size: 14px;
         font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .purchase-detail-label {
