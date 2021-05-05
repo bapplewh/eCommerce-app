@@ -16,6 +16,7 @@ import SignIn from "./components/auth/sign-in";
 import SignUp from "./components/auth/sign-up";
 import Account from "./components/account/account";
 import Shop from "./components/shop/shop";
+import Icons from "./icons";
 
 function main() {
   ReactDOM.render(
