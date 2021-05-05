@@ -74,6 +74,8 @@ class AccountInfoForm extends Component {
                     component={FormInput} 
                 />
 
+                <div className="account-info-form__line"></div>
+
                 {
                     this.state.showPasswords ? 
                     // true case
@@ -106,6 +108,27 @@ class AccountInfoForm extends Component {
                             placeholder="Confirm Password" 
                             name="confirm" 
                             component={FormInput} 
+                        />,
+
+                        <Field 
+                            key={3}
+                            className="account-info-form__update-info" 
+                            onClick={() => this.setState({ showPasswords: false })}
+                            type="submit" 
+                            title="Update Information" 
+                            name="update-info" 
+                            component={FormButton} 
+                        />,
+
+                        <Field 
+                            key={4}
+                            className="account-info-form__cancel" 
+                            onClick={() => this.setState({ showPasswords: false })}
+                            type="button" 
+                            title="Cancel" 
+                            name="cancel" 
+                            short={true}
+                            component={FormButton} 
                         />
                     ]
 
