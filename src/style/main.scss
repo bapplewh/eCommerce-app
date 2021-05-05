@@ -15,9 +15,12 @@ body {
     color: #808080;
 }
 
+
 @import "variables.scss";
 @import "layout.scss";
 @import "header-navbar.scss";
+
+// AUTH
 @import "auth/sign-in.scss";
 @import "auth/sign-up.scss";
 
@@ -25,6 +28,10 @@ body {
 @import "form-fields.scss";
 @import "details.scss";
 
+// ACCOUNT
 @import "account/account.scss";
 @import "account/purchase-history.scss";
 @import "account/account-info.scss";
+
+// SHOP
+@import "shop/shop.scss";
