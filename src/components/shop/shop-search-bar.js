@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from "redux-form";
-
-// import { faSearch } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function FormSearchBar(props) {
     return (
-        <input className={`${props.className} form-search-bar`} {...props.input} type="text" placeholder="Search" />
+        <div className="seach-bar-grid">
+            <FontAwesomeIcon className="seach-bar-grid__icon" icon={faSearch} />
+            <input className={`${props.className} form-search-bar seach-bar-grid__input`} {...props.input} type="text" placeholder="Search" />
+        </div>
     )
 }
 
@@ -17,7 +19,7 @@ class ShopSearchBar extends Component {
 
         return (
             <form onSubmit={handleSubmit} className={`${className} shop-search-bar`}>
-                <Field name="query" className="shop-search-bar__form-search-bar" placeholder="search" component={FormSearchBar} />
+                <Field name="query" className="shop-search-bar__form-search-bar" placeholder="Search" component={FormSearchBar} />
             </form>
         )
     }

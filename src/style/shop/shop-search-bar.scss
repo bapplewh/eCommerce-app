@@ -1,0 +1,42 @@
+.shop-search-bar {
+    input {
+        font-size: 20px;
+        font-family: "Titillium Web";
+        font-weight: 200;
+
+        height: 40px;
+        width: 100%;
+        border: 1px solid $litegrey;
+        border-radius: 20px;
+
+        color: #808080;
+
+        &::placeholder {
+            color: #ccc;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.seach-bar-grid {
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: 20px [s] 20px [icon-e] 1fr [e];
+
+    &__icon {
+        grid-row: s/e;
+        grid-column: s/icon-e;
+        font-size: 18px;
+        z-index: 100;
+        align-self: center;
+    }
+
+    &__input {
+        grid-row: s/e;
+        grid-column: 1/e;
+        padding-left: 50px;
+    }
+}
