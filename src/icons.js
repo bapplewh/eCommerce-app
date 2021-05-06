@@ -5,14 +5,16 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { 
     faSearch,
     faPlus,
-    faMinus 
+    faMinus,
+    faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
     library.add(
         faSearch,
         faPlus,
-        faMinus
+        faMinus,
+        faTimes
     );
 };
 
