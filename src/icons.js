@@ -2,11 +2,17 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 // import your icons
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { 
+    faSearch,
+    faPlus,
+    faMinus 
+} from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
     library.add(
-        faSearch
+        faSearch,
+        faPlus,
+        faMinus
     );
 };
 
