@@ -43,18 +43,29 @@
 }
 
 .cart-content {
+    display: grid;
+    grid-template-rows: 25px [title-s] 80px [title-e products-s] 1fr [products-e footer-s] 113px [footer-e];
+    grid-template-columns: [footer-s] 30px [s] 1fr [e] 30px [footer-e];
+
     &__title {
+        grid-row: title-s/title-e;
+        grid-column: s/e;
         font-size: 30px;
         font-weight: 600;
         font-family: "Titillium Web";
         color: $litegrey;
+        margin-bottom: 50px;
     }
 
     &__products {
+        grid-row: products-s/products-e;
+        grid-column: s/e;
         display: grid;
     }
 
     &__footer {
+        grid-row: footer-s/footer-e;
+        grid-column: footer-s/footer-e;
         display: grid;
     }
 }
@@ -65,7 +76,7 @@
 
     display: grid;
     grid-template-rows: [s] 1fr [e];
-    grid-template-columns: 50px [checkout-s] 1fr [checkout-e sub-s] 1fr [sub-e] 27px [price-s] 46px [price-e] 30px;
+    grid-template-columns: 40px [checkout-s] 1fr [checkout-e sub-s] 1fr [sub-e] 27px [price-s] 46px [price-e] 30px;
     align-items: center;
 
     & > * {
