@@ -4,6 +4,7 @@ import * as actions from "../../actions";
 
 import CartProduct from "./cart-product";
 import CartButton from "./cart-button";
+import history from "../../history";
 
 
 function CartContent({className, products}) {
@@ -31,7 +32,7 @@ function CartFooter({className, products}) {
 
     return (
         <div className={`${className} cart-footer`}>
-            <a className="cart-footer__checkout">
+            <a onClick={() => history.push('/order/review')} className='cart-footer__checkout'>
                 Checkout
             </a>
 
