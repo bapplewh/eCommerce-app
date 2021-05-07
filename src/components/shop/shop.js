@@ -3,13 +3,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import ShopProduct from "./shop-product";
 import ShopSearchBar from "./shop-search-bar";
 import ShopCart from "./shop-cart";
-import CartButton from "./cart-button";
+import CartButtonAdd from "./cart-button-add";
 
 
 class Shop extends Component {
@@ -77,7 +74,7 @@ class Shop extends Component {
                     this.state.showCart ? <ShopCart className="shop__cart"/> : ""
                 }
 
-                <CartButton onClick={this.handleAddToCart} className="shop__cart-button" />
+                <CartButtonAdd onClick={this.handleAddToCart} className="shop__cart-button" />
             </div>
         )
     }
