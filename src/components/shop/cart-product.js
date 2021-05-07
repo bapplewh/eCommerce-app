@@ -3,9 +3,12 @@ import React, { Component } from "react";
 import Quantity from "../quantity";
 import GreenPriceTag from "../green-price-tag";
 
+
 class CartProduct extends Component {
     render() {
-        const {className, title, quantity, price} = this.props;
+        console.log(this.props);
+        const { className, product, quantity } = this.props;
+        const { title, price } = product;
 
         return (
             <div className={`${className} cart-product`}>
