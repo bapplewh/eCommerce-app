@@ -6,7 +6,8 @@ import {
     faSearch,
     faPlus,
     faMinus,
-    faTimes
+    faTimes,
+    faCartPlus
 } from "@fortawesome/free-solid-svg-icons";
 
 const Icons = () => {
@@ -14,7 +15,8 @@ const Icons = () => {
         faSearch,
         faPlus,
         faMinus,
-        faTimes
+        faTimes,
+        faCartPlus
     );
 };
 

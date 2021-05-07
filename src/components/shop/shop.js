@@ -3,9 +3,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import ShopProduct from "./shop-product";
 import ShopSearchBar from "./shop-search-bar";
 import ShopCart from "./shop-cart";
+import CartButton from "./cart-button";
 
 
 class Shop extends Component {
@@ -44,6 +48,14 @@ class Shop extends Component {
         this.props.filterProductsWithQuery(fields);
     }
 
+    handleAddToCart = () => {
+        if (document.getElementById("shop-cart").classList.contains("cart-hidden")) {
+            document.getElementById("shop-cart").classList.remove("cart-hidden");
+        } else {
+            document.getElementById("shop-cart").classList.add("cart-hidden");
+        }
+    }
+
     render() {
         // return <ShopCart className="shop__cart"/> 
 
@@ -65,7 +77,7 @@ class Shop extends Component {
                     this.state.showCart ? <ShopCart className="shop__cart"/> : ""
                 }
 
-                {/* {shop cart button} */}
+                <CartButton onClick={this.handleAddToCart} className="shop__cart-button" />
             </div>
         )
     }
