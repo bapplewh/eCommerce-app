@@ -64,6 +64,7 @@
     grid-template-columns: [title-s] 1fr [title-e] 65px [price-s] 1fr [price-e];
     grid-template-rows: 1fr;
     align-items: center;
+    line-height: 27px;
 
     &__title {
         grid-column: title-s/title-e;
@@ -84,7 +85,7 @@
     &__title,
     &__price {
         color: $green;
-        margin-top: 18px;
+        margin-top: 20px;
         font-weight: 600;
     }
 
