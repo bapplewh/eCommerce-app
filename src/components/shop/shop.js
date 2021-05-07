@@ -2,13 +2,22 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import * as actions from "../../actions";
+
 import ShopProduct from "./shop-product";
 import ShopSearchBar from "./shop-search-bar";
 import ShopCart from "./shop-cart";
 
-class Shop extends Component {
-    componentDidMount() {
 
+class Shop extends Component {
+    constructor() {
+        super();
+
+        this.state =  {
+            showCart: true
+        }
+    }
+
+    componentDidMount() {
         const headerLinks = [
             {   
                 _id: 0,
@@ -36,10 +45,10 @@ class Shop extends Component {
     }
 
     render() {
+        // return <ShopCart className="shop__cart"/> 
+
         return (
             <div className="shop">
-                <ShopCart className="shop__cart"/> 
-            
                 <ShopSearchBar onSubmit={this.onSubmit} className="shop__search-bar" />
 
                 <div className="shop__products">
@@ -51,6 +60,12 @@ class Shop extends Component {
                         })
                     }
                 </div>
+
+                {
+                    this.state.showCart ? <ShopCart className="shop__cart"/> : ""
+                }
+
+                {/* {shop cart button} */}
             </div>
         )
     }
@@ -60,7 +75,10 @@ class Shop extends Component {
 function mapStateToProps(state) {
     const { categories, filteredProducts } = state.shop;
 
-    return { categories, filteredProducts }
+    return { 
+        categories, 
+        filteredProducts 
+    }
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);
